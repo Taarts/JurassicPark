@@ -7,6 +7,16 @@ namespace JurassicPark
 
     class Program
     {
+        static void DisplayGreeting()
+        {
+            Console.WriteLine("------------------------------------------");
+            Console.WriteLine("   🦕 🦖 Welcome to Jurassic Park 🦖 🦕    ");
+            Console.WriteLine("------------------------------------------");
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+        }
         static string PromptForString(string prompt)
         {
             Console.Write(prompt);
@@ -32,7 +42,6 @@ namespace JurassicPark
 
         }
 
-        //       A:gorithm
         static void Main(string[] args)
         {
 
@@ -40,49 +49,44 @@ namespace JurassicPark
             var dinosaursList = new List<Dinosaur>();
             Console.WriteLine();
             // Create MENU
+            DisplayGreeting();
+
             var keepGoing = true;
             while (keepGoing)
             {
 
-                var userAnswer = PromptForString("What would you like to do?\n To (V)iew the List in the park?\n To (A)dd a new Dinosaur to the park?\n to (R)emove a Dinosaur from the Park?\n To (T)ransfer a Dinosaur to another Enclosure?\n To (S)ummarize all the Dinosaurs we have?\n Or (Q)uit");
+                var userAnswer = PromptForString("What would you like to do?\n To (V)iew the List in the park?\n To (A)dd a new Dinosaur to the park?\n to (R)emove a Dinosaur from the Park?\n To (T)ransfer a Dinosaur to another Enclosure?\n To (S)ummarize all the Dinosaurs we have?\n Or (Q)uit ");
+                userAnswer = Console.ReadLine().ToUpper();
                 // Console.WriteLine("This works");
                 // Create method to describe class
                 // private static void ViewDinosaur()
                 // to (V)iew
-                if (userAnswer == "V")
+                switch (userAnswer)
                 {
-                    ViewDino(dinosaursList);
+                    case "Q":
+                        keepGoing = false;
+                        break;
+                    case "V":
+                        ViewDino(dinosaursList);
+                        break;
+                    case "A":
+                        AddDino(dinosaursList);
+                        break;
+                    case "R":
+                        RemoveDino(dinosaursList);
+                        break;
+                    case "T":
+                        TransferDino(dinosaursList);
+                        break;
+                    case "S":
+                        SummerizeDino(dinosaursList);
+                        break;
+
+                    default:
+                        Console.WriteLine("☠️ ☠️ ☠️ ☠️ ☠️ NOPE! ☠️ ☠️ ☠️ ☠️ ☠️");
+                        break;
                 }
                 // need to make a loop to go back if they 
-                else
-                    // to (A)dd
-                    if (userAnswer == "A")
-                {
-                    AddDino(dinosaursList);
-                }
-                else
-                  // to (R)emove
-                  if (userAnswer == "R")
-                {
-                    RemoveDino(dinosaursList);
-                }
-
-                else
-                       if (userAnswer == "T")
-                {
-                    TransferDino(dinosaursList);
-                }
-                // to (S)ummarize
-                else
-                    if (userAnswer == "S")
-                {
-                    SummerizeDino(dinosaursList);
-
-                }
-                if (userAnswer == "Q")
-                {
-                    keepGoing = false;
-                }
                 // go back to the menu to repeat or choose another option.
 
             }

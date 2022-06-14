@@ -9,9 +9,9 @@ namespace JurassicPark
     {
         static void DisplayGreeting()
         {
-            Console.WriteLine("------------------------------------------");
-            Console.WriteLine("   🦕 🦖 Welcome to Jurassic Park 🦖 🦕    ");
-            Console.WriteLine("------------------------------------------");
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine("    🐉 🦕 🦖 Welcome to Jurassic Park 🦖 🦕 🐉    ");
+            Console.WriteLine("------------------------------------------------");
             Console.WriteLine();
             Console.WriteLine();
 

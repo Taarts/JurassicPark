@@ -56,10 +56,7 @@ namespace JurassicPark
             {
 
                 var userAnswer = PromptForString("What would you like to do?\n To (V)iew the List in the park?\n To (A)dd a new Dinosaur to the park?\n to (R)emove a Dinosaur from the Park?\n To (T)ransfer a Dinosaur to another Enclosure?\n To (S)ummarize all the Dinosaurs we have?\n Or (Q)uit ");
-                userAnswer = Console.ReadLine().ToUpper();
-                // Console.WriteLine("This works");
-                // Create method to describe class
-                // private static void ViewDinosaur()
+
                 // to (V)iew
                 switch (userAnswer)
                 {
@@ -79,7 +76,7 @@ namespace JurassicPark
                         TransferDino(dinosaursList);
                         break;
                     case "S":
-                        SummerizeDino(dinosaursList);
+                        SummarizeDino(dinosaursList);
                         break;
 
                     default:
@@ -148,7 +145,7 @@ namespace JurassicPark
             }
         }
 
-        private static void SummerizeDino(List<Dinosaur> dinosaursList)
+        private static void SummarizeDino(List<Dinosaur> dinosaursList)
         {
             var carnivoreTotal = 0;
             var herbivoreTotal = 0;
@@ -197,6 +194,7 @@ namespace JurassicPark
 
         private static void AddDino(List<Dinosaur> dinosaursList)
         {
+            Console.WriteLine("any ol msg");
             var dino = new Dinosaur();
 
             dino.Name = PromptForString("What is the name of the species you'd like to add? ");
